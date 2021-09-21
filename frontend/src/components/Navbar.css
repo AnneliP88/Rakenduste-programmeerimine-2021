@@ -1,0 +1,11 @@
+.navbar{
+  background-color: skyblue;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart{
+  height: 40px;
+  margin: 50px;
+}
