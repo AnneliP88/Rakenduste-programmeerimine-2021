@@ -22,6 +22,10 @@ function Home() {
 
   return (
     <div>
+      <Link to="categories">
+        <button>Kategooriaid</button>
+      </Link>
+      <br/>
       <Link to="add-item">
         <button>Lisa uus ese</button>
       </Link>

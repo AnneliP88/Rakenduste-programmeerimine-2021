@@ -5,7 +5,7 @@ function ItemList(props){
     <div>
       {props.items.map(item=>(
         <Item 
-          key={item.div}
+          key={item.id}
           name={item.name} 
           price={item.price} 
           category={item.category}/>

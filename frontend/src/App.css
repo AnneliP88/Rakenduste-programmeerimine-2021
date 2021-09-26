@@ -1,3 +1,18 @@
 h1 {
   text-align: center;
 }
+
+button {
+  cursor: pointer;
+  border-radius: 3px;
+  border: black 1px solid;
+  padding: 5px;
+}
+
+button:hover {
+  background-color: white;
+}
+
+select {
+  cursor: pointer;
+}
