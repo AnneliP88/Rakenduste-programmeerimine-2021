@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom';
 import CategoryList from '../components/CategoryList';
 import {useState, useEffect} from 'react';
 
-function CategoryPage(props) {
+function CategoryPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedCategories, setLoadedCategories] = useState([]);
 
