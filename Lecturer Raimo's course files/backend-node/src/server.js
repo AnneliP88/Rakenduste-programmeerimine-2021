@@ -2,10 +2,15 @@ const express = require('express')
 const mongoose = require('mongoose')
 const PORT = process.env.PORT || 3000
 
-const app = express()
+const itemRoutes = require('./routes/item');
 
-app.get("/", (req, res) => {
-  res.send("Hello World test")
+const app = express()
+app.use(express.json());
+
+app.use('/api/item', itemRoutes);
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
 })
 
 mongoose
@@ -14,7 +19,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(PORT, () => console.log(`test Server started on PORT ${PORT}`))
+    app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`))
   })
   .catch((err) => {
     console.log(err)

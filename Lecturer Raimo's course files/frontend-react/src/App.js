@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react"
 import './App.css';
 import Fun from './components/Fun';
 import Greeting from './components/Greeting';
@@ -9,23 +9,23 @@ function App() {
 
   return (
     <div className="App">
-      {show && <h1>{magicNumber}</h1>}
+      { show && <h1>{ magicNumber }</h1> }
       <Fun 
-        magicNumber={magicNumber}
+        magicNumber={magicNumber} 
         setMagicNumber={setMagicNumber}
         show={show}
         setShow={setShow}
       />
       <Fun 
-        magicNumber={magicNumber}
-        setMagicNumber={setMagicNumber}
+        magicNumber={magicNumber} 
+        setMagicNumber={setMagicNumber} 
         amount={5}
         show={show}
         setShow={setShow}
       />
       <Fun 
-        magicNumber={magicNumber}
-        setMagicNumber={setMagicNumber}
+        magicNumber={magicNumber} 
+        setMagicNumber={setMagicNumber} 
         amount={25}
         show={show}
         setShow={setShow}

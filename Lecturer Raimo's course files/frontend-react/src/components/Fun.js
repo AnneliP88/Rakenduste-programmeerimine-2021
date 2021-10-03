@@ -11,7 +11,7 @@ function Fun({ magicNumber, setMagicNumber, amount = 1, show, setShow }){
     setMagicNumber(magicNumber + amount)
   }
   
-  return(
+  return (
     <>
       <h1>Fun counter { counter }</h1>
       <button onClick={addNumber}>Add 1</button>
@@ -22,4 +22,4 @@ function Fun({ magicNumber, setMagicNumber, amount = 1, show, setShow }){
   )
 }
 
-export default Fun;
+export default Fun
