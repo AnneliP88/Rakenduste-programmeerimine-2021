@@ -1,7 +1,7 @@
 ## 1. kodutöö
 Uue kategooria lisamine toimib Backendis. Testitud Postman'iga.  
   
-![1. kodutöö animatsioon](Readme_file_pics/Second_HW_animation1.gif)
+![1. kodutöö animatsioon](Readme_file_pics/First_HW_animation1.gif)
 
 ## 2. kodutöö
 "Kategooriad" nupp asub avalehel (mitte navbar-il). Sealt avaneb kategooriate leht, kus kuvatakse juba sisestatud kategooriaid ja nuppu, mille abil on võimalik minna "Lisa uus kategooria" lehele.  
