@@ -14,10 +14,6 @@ Päringud Postman'i abil. Mongo andmebaas:
 ![Postmani päringud ja Mongo andmebaas](Readme_file_pics/01.10.21_lesson_mongo_and_postman.gif)  
   
 ## 04.10.2021 tunnitöö  
-PostgreSQL on ühendatud. Päringud Postman'i abil: 
+Animatsioonis on 3 osa. Alustuseks on näha päringud Postmani peal. Seejärel katsetasin ka Swaggerit. Ning lõpetuseks on näha mis vaatas vastu PostgreSQL andmebaasist.
   
-![Postmani päringud](Readme_file_pics/04.10.21_lesson.gif)  
-  
-Päringud Swagger'i abil:  
-  
-![Swagger UI abil tehtud päringud](Readme_file_pics/04.10.21_lesson_swagger.gif)  
+![Postmani+Swaggeri päringud ja PostgreSQL andmebaasi vaade](Readme_file_pics/04.10.2021_lesson_postman_swagger_postgresql.gif)   
