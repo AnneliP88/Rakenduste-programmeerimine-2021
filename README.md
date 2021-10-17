@@ -1,4 +1,5 @@
-## Siin README failis on tehtud tööde GIF-animatsioonid. <strong><em>(click the arrow to expand)</em></strong><br/>
+## Siin README failis on tehtud tööde GIF-animatsioonid.  
+<strong><em>(Click the arrow to expand)</em></strong><br/><br/>
   
 # Kodutööd  
 <details>
@@ -18,6 +19,21 @@
 ![2. kodutöö animatsioon](Readme_file_pics/Second_HW_animation2.gif)  
   
 </details>
+  
+<details>
+  <summary>3. kodutöö (tähtaeg 15.10)</summary>
+
+  Lisasin:  
+  * eseme info uuendamise võimaluse  
+  * eseme quality väärtuse 1 võrra kasvatamise võimaluse  
+  * kõikide esemete korraga kustutamise võimaluse  
+  * ja eseme mudelis on timestamp, mis tekitab createdAt ja updatedAt väljad  
+  * updatedAt väli uueneb automaatselt iga kord, kui eseme infot uuendatakse  
+
+  ![3. kodutöö animatsioon](Readme_file_pics/Third_HW_animation.gif) 
+
+</details>
+
 <br/>
   
 # Tunnitööd  
