@@ -62,3 +62,11 @@
   
   ![Postmani+Swaggeri päringud ja PostgreSQL andmebaasi vaade](Readme_file_pics/04.10.2021_lesson_postman_swagger_postgresql.gif)  
 </details>
+
+<details>
+  <summary>15.10.2021 tunnitöö</summary>
+  
+  JWT authorization. Testisime Postmaniga kasutaja loomist, sisselogimist ja Bearer Tokeniga lehele juurdepääsu saamist.
+  
+  ![JWT authorization](Readme_file_pics/15.10.21_lesson_jwt_auth_and_postman.gif)  
+</details>
