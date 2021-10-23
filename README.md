@@ -23,14 +23,21 @@
 <details>
   <summary>3. kodutöö (tähtaeg 15.10)</summary>
 
-  Lisasin:  
-  * eseme info uuendamise võimaluse  
-  * eseme quality väärtuse 1 võrra kasvatamise võimaluse  
-  * kõikide esemete korraga kustutamise võimaluse  
+  ### I osa:
+  * lisasin eseme info uuendamise võimaluse  
+  * lisasin eseme quality väärtuse 1 võrra kasvatamise võimaluse  
+  * lisasin kõikide esemete korraga kustutamise võimaluse  
   * ja eseme mudelis on timestamp, mis tekitab createdAt ja updatedAt väljad  
   * updatedAt väli uueneb automaatselt iga kord, kui eseme infot uuendatakse  
 
-  ![3. kodutöö animatsioon](Readme_file_pics/Third_HW_animation.gif) 
+  ![3. kodutöö animatsioon](Readme_file_pics/Third_HW_animation.gif)  
+
+  ### II osa:
+  * lisasin uue komponendi - Farewell  
+  * katsetasin Conditional renderingi. Nii ternary operator-i, kui ka short-circuit operaatoriga.  
+  * Magic Number-i näitamise/peitmise nupul muutub ka tekst  
+
+  ![3. kodutöö animatsioon](Readme_file_pics/Third_HW_animation2.gif)  
 
 </details>
 
