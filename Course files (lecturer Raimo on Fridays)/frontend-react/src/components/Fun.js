@@ -1,6 +1,6 @@
 import React from "react"
 
-function Fun({ magicNumber, setMagicNumber, amount = 1, show, setShow }){
+function Fun({ magicNumber, setMagicNumber, amount = 1, show, setShow}){
   const [counter, setCounter] = React.useState(0)
 
   const addNumber = () => {
@@ -10,6 +10,10 @@ function Fun({ magicNumber, setMagicNumber, amount = 1, show, setShow }){
   const increaseMagicNumber = () => {
     setMagicNumber(magicNumber + amount)
   }
+
+  const showHideMagicNumber = () => {
+    setShow(!show)
+  }
   
   return (
     <>
@@ -17,7 +21,9 @@ function Fun({ magicNumber, setMagicNumber, amount = 1, show, setShow }){
       <button onClick={addNumber}>Add 1</button>
       <button onClick={() => setCounter(counter - 1)}>Deduct 1</button>
       <button onClick={increaseMagicNumber}>Add { amount } to magic number</button>
-      <button onClick={() => setShow(!show)}>Toggle magic number</button>
+      <button onClick={showHideMagicNumber} className="Fun-magic-number-btn">
+        <strong>{ show ? "Hide" : "Show"}</strong> magic number
+      </button>
     </>
   )
 }
