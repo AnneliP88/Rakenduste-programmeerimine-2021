@@ -41,6 +41,15 @@
 
 </details>
 
+<details>
+  <summary>4. kodutöö (tähtaeg 25.10)</summary>
+  
+  Lisasin komponentidele ja lehekülgedele natukene style'i.  
+  
+  ![4. kodutöö animatsioon](Readme_file_pics/Fourth_HW_animation.gif)  
+  
+</details>
+
 <br/>
   
 # Tunnitööd  
