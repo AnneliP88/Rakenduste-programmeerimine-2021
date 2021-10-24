@@ -4,15 +4,75 @@ h1 {
 
 button {
   cursor: pointer;
-  border-radius: 3px;
-  border: black 1px solid;
-  padding: 5px;
+  border-radius: 5px;
+  border: black 1px groove;
+  padding: 8px;
+  background-color: lightblue;
+  transition: 0.3s;
 }
 
 button:hover {
-  background-color: white;
+  background-color: #FAFAFA;
+  transform: scale(1.05);
 }
 
 select {
   cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.loadingDivInfo, .cartInfo {
+  width: 100vw;
+  text-align: center;
+  line-height: 200px;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.goToNewPage {
+  margin-left: 45px;
+  margin-top: 30px;
+}
+
+.addLogo {
+  width: 15px;
+  vertical-align: middle;
+}
+
+.itemsPageBoxesArea, .categoriesPageBoxesArea {
+  width: 90vw;
+  max-width: 1500px;
+  margin: 45px;
+}
+
+.itemsPageBoxesArea *, .categoriesPageBoxesArea * {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.itemBox, .categoryBox {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  margin: 10px 10px 10px 0px;
+  vertical-align: baseline;
+}
+
+.itemBox {
+  height: 100px;
+}
+
+.categoryBox {
+  height: 50px;
 }

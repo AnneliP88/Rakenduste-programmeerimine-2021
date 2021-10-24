@@ -1,8 +1,8 @@
 function Category(props) {
   return (
-    <div>
-      <div className="categoryName">{props.name}</div>
-      <div className="categoryType">{props.type}</div>
+    <div className="categoryBox">
+      <div className="categoryName"><strong>Nimetus:</strong> {props.name}</div>
+      <div className="categoryType"><strong>Tüüp:</strong> {props.type}</div>
     </div>
   )
 }

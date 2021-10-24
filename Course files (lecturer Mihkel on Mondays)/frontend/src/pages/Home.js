@@ -10,26 +10,24 @@ function Home() {
     fetch('http://localhost:8080/items').then(res => {
       return res.json();
     }).then(data => {
-      console.log(data);
       setIsLoading(false);
       setLoadedItems(data);
     });
   },[])
 
   if(isLoading){
-    return(<div>Laeb...</div>);
+    return(<div className="loadingDivInfo">Laeb...</div>);
   }
 
   return (
     <div>
-      <Link to="categories">
-        <button>Kategooriaid</button>
-      </Link>
-      <br/>
       <Link to="add-item">
-        <button>Lisa uus ese</button>
+        <button className="goToNewPage"><img className="addLogo" src="add.png" alt="add icon"/> Lisa uus ese</button>
       </Link>
-      <ItemList items={loadedItems}/>
+      <h1>Esemed</h1>
+      <div className="itemsPageBoxesArea">
+        <ItemList items={loadedItems}/>
+      </div>
     </div>
   )
 }

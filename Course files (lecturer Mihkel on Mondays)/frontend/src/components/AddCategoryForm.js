@@ -22,7 +22,7 @@ function AddCategoryForm(props){
   return(
     <form onSubmit={formSubmitHandler}>
       <label>Kategooria nimi</label><br/>
-      <input type="text" required placeholder="Nimi" ref={nameImputRef}/><br/>
+      <input type="text" required placeholder="Nimi" ref={nameImputRef}/><br/><br/>
       <label>Kategooria tüüp</label>
       <br/>
       <select ref={typeImputRef}>

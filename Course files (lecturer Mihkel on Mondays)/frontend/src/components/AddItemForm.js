@@ -25,11 +25,11 @@ function AddItemForm(props){
   return(
     <form onSubmit={formSubmitHandler}>
       <label>Eseme nimi</label><br/>
-      <input type="text" required placeholder="Nimi" ref={nameImputRef}/><br/>
+      <input type="text" required placeholder="Nimi" ref={nameImputRef}/><br/><br/>
       <label>Eseme hind</label><br/>
-      <input type="number" required ref={priceImputRef}/><br/>
+      <input type="number" required placeholder="Hind" ref={priceImputRef}/><br/><br/>
       <label>Eseme kategooria</label><br/>
-      <input type="text" required ref={categoryImputRef}/><br/><br/>
+      <input type="text" required placeholder="Kategooria" ref={categoryImputRef}/><br/><br/><br/>
       <button>Sisesta uus ese</button>
     </form>
   );

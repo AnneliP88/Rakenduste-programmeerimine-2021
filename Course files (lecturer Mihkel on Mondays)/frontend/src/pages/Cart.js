@@ -1,7 +1,7 @@
 function Cart() {
   return (
-    <div>
-      Ostukorv
+    <div className="cartInfo">
+      Ostukorv on tühi!
     </div>
   )
 }

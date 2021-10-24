@@ -10,22 +10,24 @@ function CategoryPage() {
     fetch('http://localhost:8080/categories').then(res => {
       return res.json();
     }).then(data => {
-      console.log(data);
       setIsLoading(false);
       setLoadedCategories(data);
     });
   },[])
 
   if(isLoading){
-    return(<div>Laeb...</div>);
+    return(<div className="loadingDivInfo">Laeb...</div>);
   }
 
   return (
     <div>
       <Link to="add-category">
-        <button>Lisa uus kategooria</button>
+        <button className="goToNewPage"><img className="addLogo" src="add-folder.png" alt="add icon"/> Lisa uus kategooria</button>
       </Link>
-      <CategoryList categories={loadedCategories}/>
+      <h1>Kategooriad</h1>
+      <div className="categoriesPageBoxesArea">
+        <CategoryList categories={loadedCategories}/>
+      </div>
     </div>
   )
 }
