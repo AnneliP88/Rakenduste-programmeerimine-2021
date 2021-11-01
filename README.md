@@ -44,10 +44,28 @@
 <details>
   <summary>4. kodutöö (tähtaeg 25.10)</summary>
   
-  Lisasin komponentidele ja lehekülgedele natukene style'i.  
+  ### I osa:
+  * Lisasin komponentidele ja lehekülgedele natukene style'i.  
   
   ![4. kodutöö animatsioon](Readme_file_pics/Fourth_HW_animation.gif)  
   
+  ### II osa:
+  * Kuna 25.10 loengus lisandunud elemendid tegid olemasoleva kujunduse natukene katki, siis täiendasin seda veidi. Veebilehel on nüüd ka väiksematele ekraanidele sobiv dropdown-itav navbar:  
+
+  ![Dropdown navbar](Readme_file_pics/Dropdown_navbar.gif)  
+
+  * Lisasin ka "loading" komponendi, mis on nähtav ainult siis, kui lehe sisu veel laetakse. Et see paremini välja paistaks siis simuleerisin aeglast võrguühendust:  
+
+  ![Loading komponent](Readme_file_pics/Loading_animation.gif)  
+
+  * Kuulutuste kaste kuvatakse nüüd grid vaates. Nii õnnestus tekitada layout, mil viimases reas olevad üksikud kuulutused paiknevad ikka rea alguses (mitte keskel).  
+
+  ![Grid layout](Readme_file_pics/Grid_layout.gif)  
+
+  * Ning nuppudel on hover efekt küljes.  
+
+  ![Grid layout](Readme_file_pics/Hover_effect.gif)  
+
 </details>
 
 <br/>
@@ -79,3 +97,19 @@
   
   ![JWT authorization](Readme_file_pics/15.10.21_lesson_jwt_auth_and_postman.gif)  
 </details>
+
+<details>
+  <summary>25.10.2021 tunnitöö</summary>
+  
+  Lisasime kuulutuse muutmise ja kustutamise võimaluse (Admini vaates). Ning ühe kuulutuse vaatamise võimaluse.
+  
+  ![25.10.2021](Readme_file_pics/25.10.2021_edit_delete_view.gif)  
+</details>
+
+<br/>
+  
+# Pisipildid, logod, animatsioonid jms on võetud järgnevatelt lehtedelt:  
+* https://www.flaticon.com/  
+* https://maketext.io/  
+* https://loading.io/css  
+* https://favicon.io/  
