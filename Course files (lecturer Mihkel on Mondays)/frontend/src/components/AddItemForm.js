@@ -1,4 +1,3 @@
-import './AddItemForm.css';
 import {useRef} from 'react';
 
 function AddItemForm(props){
@@ -29,7 +28,7 @@ function AddItemForm(props){
       <label>Eseme hind</label><br/>
       <input type="number" required placeholder="Hind" ref={priceImputRef}/><br/><br/>
       <label>Eseme kategooria</label><br/>
-      <input type="text" required placeholder="Kategooria" ref={categoryImputRef}/><br/><br/><br/>
+      <input type="text" required placeholder="Kategooria" ref={categoryImputRef}/><br/><br/>
       <button>Sisesta uus ese</button>
     </form>
   );

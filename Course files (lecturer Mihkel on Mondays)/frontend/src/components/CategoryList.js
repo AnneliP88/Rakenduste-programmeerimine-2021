@@ -2,7 +2,7 @@ import Category from '../components/Category';
 
 function CategoryList(props){
   return(
-    <div>
+    <div className="categoryListBoxesArea">
       {props.categories.map(category=>(
         <Category 
           key={category.id}

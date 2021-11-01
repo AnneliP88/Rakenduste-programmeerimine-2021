@@ -1,4 +1,3 @@
-import './AddCategoryForm.css';
 import {useRef} from 'react';
 
 function AddCategoryForm(props){
@@ -23,14 +22,12 @@ function AddCategoryForm(props){
     <form onSubmit={formSubmitHandler}>
       <label>Kategooria nimi</label><br/>
       <input type="text" required placeholder="Nimi" ref={nameImputRef}/><br/><br/>
-      <label>Kategooria tüüp</label>
-      <br/>
+      <label>Kategooria tüüp</label><br/>
       <select ref={typeImputRef}>
         <option value="PREMIUM">PREMIUM</option>
         <option value="DELUXE">DELUXE</option>
         <option value="BASIC">BASIC</option>
-      </select>
-      <br/><br/>
+      </select><br/><br/>
       <button>Sisesta uus kategooria</button>
     </form>
   );

@@ -2,6 +2,7 @@ package ee.anneli.backend2.controller;
 
 import ee.anneli.backend2.model.Item;
 import ee.anneli.backend2.service.ItemService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +25,7 @@ public class ItemController {
         itemService.saveItem(item);
     }
 
+    @ApiOperation("API otspunkt eseme muutmiseks, alati saab kaasa ID")
     @PostMapping("edit-item")
     public void editItem(@RequestBody Item item) {
         itemService.editItem(item);

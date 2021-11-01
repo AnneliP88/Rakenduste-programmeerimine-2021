@@ -1,31 +1,97 @@
-.navbar{
+nav {
   background-image: linear-gradient(#596886, lightblue);
-  height: 150px;
+  width: 100vw;
   display: flex;
-  justify-content: space-between;
-  
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
-.logo {
+
+.navbar{
+  width: 90vw;
+  max-width: 1380px;
   height: 100px;
-  margin: 20px;
-}
-
-.cart{
-  height: 40px;
-  margin: 50px;
-}
-
-.navbarLeftSection {
   display: flex;
-  flex-direction: row;
-
+  align-items: center;
 }
 
-.navbarMiddleSection * {
+.emptySpaceOnRightSide {
+  margin-right: auto;
+}
+
+.shopLogo {
+  height: 60px;
+}
+
+.cartImg {
+  height: 30px;
+  margin: 0px 0px 0px 10px;
+}
+
+.menuSection * {
   color: black;
   font-weight: 500;
-  text-decoration: none;
-  display: inline-block;
-  line-height: 150px;
   margin: 0px 10px;
+}
+
+.menuSection *:hover {
+  color: #fafafa;
+}
+
+.menuForSmallerScreens * {
+  display: none;
+}
+
+.openCloseMenuBtn {
+  display: none;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .goToNewPageBtn span {
+    display: none;
+  }
+
+  .menuSection * {
+    display: none;
+  }
+
+  .menuForSmallerScreens * {
+    color: black;
+    font-weight: 500;
+    margin: 0px 10px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+    width: 100vw;
+    border-top: 1px solid #fafafa;
+  }
+  
+  .menuForSmallerScreens *:hover {
+    color: #fafafa;
+  }
+
+  .openCloseMenuBtn {
+    display: flex;
+    background-color: rgba(186, 226, 240, 0);
+    border: none;
+    padding: 0;
+    margin: 0 20px;
+    width: 30px;
+  }
+  
+  .openCloseMenuBtn:hover {
+    background-color: rgba(186, 226, 240, 0);
+    border: none;
+    transform: none;
+  }
+
+  .openMenuPic {
+    height: 30px;
+  }
+  
+  .closeMenuPic {
+    height: 25px;
+  }
 }

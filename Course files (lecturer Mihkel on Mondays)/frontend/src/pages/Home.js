@@ -1,6 +1,6 @@
 import ItemList from '../components/ItemList';
-import {Link} from 'react-router-dom';
 import {useState, useEffect} from 'react';
+import Loader from '../components/Loader';
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,19 +16,17 @@ function Home() {
   },[])
 
   if(isLoading){
-    return(<div className="loadingDivInfo">Laeb...</div>);
+    // return (<div className="loadingDivInfo">Laeb...</div>);
+    return (<Loader/>)
   }
 
   return (
-    <div>
-      <Link to="add-item">
-        <button className="goToNewPage"><img className="addLogo" src="add.png" alt="add icon"/> Lisa uus ese</button>
-      </Link>
+    <>
       <h1>Esemed</h1>
-      <div className="itemsPageBoxesArea">
-        <ItemList items={loadedItems}/>
-      </div>
-    </div>
+      <section>
+        <ItemList isAddToCart={true} items={loadedItems}/>
+      </section>
+    </>
   )
 }
 

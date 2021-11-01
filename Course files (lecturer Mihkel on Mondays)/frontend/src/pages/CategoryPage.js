@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom';
 import CategoryList from '../components/CategoryList';
 import {useState, useEffect} from 'react';
+import Loader from '../components/Loader';
 
 function CategoryPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,19 +17,27 @@ function CategoryPage() {
   },[])
 
   if(isLoading){
-    return(<div className="loadingDivInfo">Laeb...</div>);
+    // return(<div className="loadingDivInfo">Laeb...</div>);
+    return (<Loader/>)
   }
 
   return (
-    <div>
-      <Link to="add-category">
-        <button className="goToNewPage"><img className="addLogo" src="add-folder.png" alt="add icon"/> Lisa uus kategooria</button>
-      </Link>
+    <>
+      <section>
+        <div className="goToNewPageBtnArea">
+          <Link to="add-category">
+            <button className="goToNewPageBtn">
+              <img src="add-folder.png" alt="add icon"/> 
+              <span> Lisa uus kategooria</span>
+            </button>
+          </Link>
+        </div>
+      </section>
       <h1>Kategooriad</h1>
-      <div className="categoriesPageBoxesArea">
+      <section>
         <CategoryList categories={loadedCategories}/>
-      </div>
-    </div>
+      </section>
+    </>
   )
 }
 

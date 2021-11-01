@@ -1,7 +1,109 @@
+/* Different pages base layouts */
+section {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+}
+
+.goToNewPageBtnArea {
+  width: 90vw;
+  max-width: 1380px;
+  justify-content: flex-start;
+}
+
+.cartInfo { 
+  width: 100vw;
+  text-align: center;
+  line-height: 200px;
+}
+
+.SingleItemPageArea {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/* Categories pages and Items page layout */
+.itemsListBoxesArea, .categoryListBoxesArea {
+  width: 90vw;
+  max-width: 1380px;
+  display:grid;
+  grid-template-columns: repeat(auto-fill, 255px);
+  grid-column-gap: 30px;
+  grid-row-gap: 20px;
+  justify-content: space-evenly;
+}
+
+.itemBox, .categoryBox {
+  box-sizing: content-box;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.itemBox {
+  height: 140px;
+}
+
+.categoryBox {
+  height: 50px;
+}
+
+.itemId, .itemName, .itemPrice, .itemCategory, .categoryName, .categoryType {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .itemBox, .categoryBox {
+    padding: 20px;
+  }
+}
+
+
+
+/* Header1 and  hyperlink tag style */
 h1 {
   text-align: center;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+  }
+}
+
+
+
+/* Form style, input and select fields */
+form {
+  text-align: center;
+}
+
+select {
+  cursor: pointer;
+}
+
+input, select {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+
+
+/* Different buttons */
 button {
   cursor: pointer;
   border-radius: 5px;
@@ -16,63 +118,42 @@ button:hover {
   transform: scale(1.05);
 }
 
-select {
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid black;
-}
-
-.loadingDivInfo, .cartInfo {
-  width: 100vw;
-  text-align: center;
-  line-height: 200px;
-}
-
-input {
-  border-radius: 5px;
-  border: 1px solid black;
-  padding: 10px;
-}
-
-.goToNewPage {
-  margin-left: 45px;
+.goToNewPageBtn {
   margin-top: 30px;
 }
 
-.addLogo {
+.addToCartBtn {
+  margin-top: 15px;
+}
+
+.goToNewPageBtn img, .addToCartBtn img {
   width: 15px;
+  vertical-align: middle;
+  margin-bottom: 3px;
+}
+
+.editDeleteBtnContainer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.deleteItemBtn, .editItemBtn {
+  background-color: rgb(194, 228, 240);
+  border: none;
+}
+
+.deleteItemBtn:hover, .editItemBtn:hover {
+  border: black 1px groove;
+}
+
+.deleteItemBtn img, .editItemBtn img {
+  width: 20px;
   vertical-align: middle;
 }
 
-.itemsPageBoxesArea, .categoriesPageBoxesArea {
-  width: 90vw;
-  max-width: 1500px;
-  margin: 45px;
-}
-
-.itemsPageBoxesArea *, .categoriesPageBoxesArea * {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.itemBox, .categoryBox {
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  margin: 10px 10px 10px 0px;
-  vertical-align: baseline;
-}
-
-.itemBox {
-  height: 100px;
-}
-
-.categoryBox {
-  height: 50px;
+@media screen and (max-width: 600px) {
+  .goToNewPageBtn {
+    margin-top: 10px;
+  }
 }
