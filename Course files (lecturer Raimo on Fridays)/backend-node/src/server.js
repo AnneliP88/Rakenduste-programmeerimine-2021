@@ -4,13 +4,40 @@ const PORT = process.env.PORT || 3000
 const jwtAuth = require("./middleware/jwtAuth")
 require("dotenv").config()
 
-const itemRoutes = require('./routes/item');
+const itemRoutes = require('./routes/item'); // I won't overwrite it. I'll keep it :)
+const postRoutes = require('./routes/post'); // especcially for HW 5
 const authRoutes = require('./routes/auth');
 
 const app = express()
 app.use(express.json());
 
-app.use('/api/item', itemRoutes);
+
+// The solution to allow FE to "talk with the" BE comes from
+// People say that it's better than npm i --save cors (we used the cors thing with lecturer Mihkel)
+// https://stackoverflow.com/questions/18310394/no-access-control-allow-origin-node-apache-port-issue
+// Add headers before the routes are defined
+app.use(function (req, res, next) {
+
+  // Website you wish to allow to connect
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+
+  // Request methods you wish to allow
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+  // Request headers you wish to allow
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+  // Set to true if you need the website to include cookies in the requests sent
+  // to the API (e.g. in case you use sessions)
+  res.setHeader('Access-Control-Allow-Credentials', true);
+
+  // Pass to next layer of middleware
+  next();
+});
+
+
+app.use('/api/item', itemRoutes); // I won't overwrite it. I'll keep it :)
+app.use('/api/post', postRoutes); // especcially for HW 5
 app.use('/api/auth', authRoutes);
 
 app.get('/', (req, res) => {

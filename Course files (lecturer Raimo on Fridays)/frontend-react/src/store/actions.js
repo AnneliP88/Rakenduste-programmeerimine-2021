@@ -1,5 +1,7 @@
 export const POST_ADD = "POST_ADD"
 export const POST_REMOVE = "POST_REMOVE"
+export const POSTS_UPDATE = "POSTS_UPDATE"
+
 export const USER_LOGIN = "USER_LOGIN"
 export const USER_LOGOUT = "USER_LOGOUT"
 
@@ -13,9 +15,8 @@ export const removePost = id => ({
   payload: id
 })
 
-// Lisada siis uus konstant selle jaoks ja muuta ka reduceris
 export const updatePosts = array => ({
-  type: "POSTS_UPDATE",
+  type: POSTS_UPDATE,
   payload: array
 })
 
