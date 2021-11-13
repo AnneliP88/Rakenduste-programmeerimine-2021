@@ -44,10 +44,12 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+// TODO: Look for more information
 app.get('/secret', jwtAuth, (req, res) => {
   res.send('Secret Hello World!')
 })
 
+// TODO: Google about "catchall" handler -> how to show a styled html page
 app.get('*', (req, res) => {
   res.send('This route does not exist')
 })

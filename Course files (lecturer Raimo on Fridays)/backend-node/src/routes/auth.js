@@ -25,14 +25,15 @@ router.post(
       .isLength({ min: 3 })
       .withMessage("Must be at least 3 characters long")
       .trim()
-      .exists()
+      // If we already use matches(), then I think that exists() isn't needed anymore
+      // .exists()
       .matches(/^[A-ZÕÄÖÜa-zõäöü]+$/)
       .withMessage("Must be alphabetic"),
     check("lastName")
       .isLength({ min: 3 })
       .withMessage("Must be at least 3 characters long")
       .trim()
-      .exists()
+      // .exists()
       .matches(/^[A-ZÕÄÖÜa-zõäöü]+$/)
       .withMessage("Must be alphabetic"),
     check("email")

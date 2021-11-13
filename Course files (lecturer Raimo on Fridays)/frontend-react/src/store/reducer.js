@@ -10,7 +10,8 @@ const postReducer = (state, action) => {
     case POST_REMOVE:
       return {
         ...state,
-        data: state.data.filter(post => post.id !== action.payload)
+        data: state.data.filter(post => post._id !== action.payload)
+        // I had to use post._id, because this is the way this field is defined
       }
     case POSTS_UPDATE: 
         return {
@@ -28,7 +29,12 @@ const authReducer = (state, action) => {
       return {
         ...state,
         token: action.payload.token,
-        user: action.payload.user
+        user: {
+          email: action.payload.email,
+          firstName: action.payload.firstName,
+          id: action.payload.id,
+          lastName: action.payload.lastName
+        }
       }
     case USER_LOGOUT:
       return {

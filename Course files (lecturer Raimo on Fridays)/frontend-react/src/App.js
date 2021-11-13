@@ -4,20 +4,19 @@ import Footer from "./components/Footer"
 import { Layout } from "antd";
 import Posts from "./pages/Posts";
 import Home from "./pages/Home";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import './App.css';
-const { Content } = Layout;
 
 function App() {
   return (
     <BrowserRouter>
-    <Layout style={{height: '100vh', backgroundColor: "lightblue", backgroundImage: "linear-gradient(#596886, lightblue)"}}>
-      <Layout.Header style={{backgroundColor: "white"}}>
-        <Header/>
+    <Layout>
+      <Layout.Header>
+        <Route path="/" component={Header} />
       </Layout.Header>
-      <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64, textAlign: "center" }}>
-        <div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
+      <Layout.Content>
+        <div>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/posts" component={Posts} />
@@ -25,9 +24,9 @@ function App() {
             <Route exact path="/signup" component={Signup} />
           </Switch>
         </div>
-      </Content>
-      <Layout.Footer style={{textAlign: "center", backgroundColor: "white"}}>
-        <Footer/>
+      </Layout.Content>
+      <Layout.Footer>
+        <Route path="/" component={Footer} />
       </Layout.Footer>
     </Layout>
     </BrowserRouter>

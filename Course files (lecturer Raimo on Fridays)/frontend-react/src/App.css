@@ -1,5 +1,57 @@
 @import 'antd/dist/antd.css';
 
-.site-layout .site-layout-background {
+/* I decided to mostly use the classNames that Ant Design already has */
+
+.ant-layout {
+  height: 100vh;
+  background-image: linear-gradient(#596886, lightblue);
+}
+
+.ant-layout-header {
+  background-color: #fff;
+}
+
+.ant-layout-content * {
   background: #fff;
+}
+
+.ant-layout-content>div {
+  padding: 24px;
+  min-height: 380px;
+}
+
+.ant-layout-content {
+  padding: 0 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.ant-layout-footer {
+  text-align: center;
+  background-color: #fff;
+  height: 50px
+}
+
+.ant-input, .ant-input-password {
+  border-radius: 10px;
+  border-color: #596886;
+  width: 186px;
+}
+
+
+
+/* Classes I made */
+
+.editAndDeleteBtn {
+  border-radius: 10px;
+  border: groove lightblue 1px;
+}
+
+.submitBtn {
+  border-radius: 10px;
+  border: outset lightblue 1px;
+}
+
+h1 {
+  margin-bottom: 25px;
 }

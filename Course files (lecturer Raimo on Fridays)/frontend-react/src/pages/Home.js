@@ -1,12 +1,20 @@
-import Signup from "../components/Signup";
-import Login from "../components/Login";
+import { useContext } from 'react'
+import { Context } from "../store";
+import Login from "../pages/Login";
+import { Link } from 'react-router-dom'
 
 function Home() {
+  const [state, dispatch] = useContext(Context);
 
   return (
     <div style={{ textAlign: "center" }}>
-      <h1>Home Page</h1>
-      <p style={{ marginTop: "50px", color: "darkgreen" }}>Welcome!</p>
+      <h1>Posting Posts...</h1>
+      { !state.auth.token && 
+        <>
+          <Login />
+          <Link to="/signup">or Create new account</Link>
+        </>
+      }
     </div>
   );
 }

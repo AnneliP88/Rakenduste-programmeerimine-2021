@@ -1,7 +1,8 @@
-import { useContext, useState, useRef, useEffect } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import { Context } from "../store";
 import { addPost, removePost, updatePosts } from "../store/actions";
-import { Table, Button } from 'antd';
+import { Table, Button, Space, notification } from 'antd';
+import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 
 function Posts() {
   const [title, setTitle] = useState("");
@@ -9,96 +10,129 @@ function Posts() {
   const [state, dispatch] = useContext(Context);
   const inputRef = useRef(null);
 
+  // I removed the "key" field, which used to be in my tableColumns,
+  // because my data has rowKey attribute, not column key :)
+  // That smart info came from: https://github.com/ant-design/ant-design/issues/7623
   const tableColumns = [
     {
-      key: 'title',
       title: 'Title',
       dataIndex: 'title',
     },
     {
-      key: 'body',
       title: 'Post',
       dataIndex: 'body',
     },
     {
-      key: 'authorId',
       title: 'Author',
-      dataIndex: 'authorId',
+      dataIndex: 'authorName',
     },
     {
-      key: 'createdAt',
       title: 'Created',
       dataIndex: 'createdAt',
+      
     },
     {
-      key: 'updatedAt',
       title: 'Updated',
       dataIndex: 'updatedAt',
     },
+    {
+      title: 'Actions',
+      render: (record) => (
+        <>
+          <Space size="middle">
+            <Button 
+              type="link" 
+              className="editAndDeleteBtn"
+              onClick={() => handleDelete(record._id)}
+            >
+              <DeleteOutlined style={{ color: "red" }}/>
+            </Button>
+
+            <Button 
+              type="link" 
+              className="editAndDeleteBtn"
+              onClick={() => handleUpdate(record)}
+            >
+              <EditOutlined style={{ color: "blue", fontSize: "17px" }}/>
+            </Button>
+          </Space>
+        </>
+      ),
+    }
   ];
 
-  // Ilma dependency massivita ehk ilma [] kutsub välja igal renderdusel
-  // tühja massiivi dependencyna esimest korda
-  // saab ka kutsuda teatud state muutustel välja
-
-  // Test data
-  // useEffect(() => {
-  //   dispatch(updatePosts([
-  //     {
-  //       id: 1,
-  //       title: "Test-prefetched-array-1"
-  //     },
-  //     {
-  //       id: 2,
-  //       title: "Test-prefetched-array-2"
-  //     },
-  //     {
-  //       id: 3,
-  //       title: "Test-prefetched-array-3"
-  //     },
-  //     {
-  //       id: 4,
-  //       title: "Test-prefetched-array-4"
-  //     },
-  //   ]))
-  // }, [])
-
-  // Või võite panna eraldi nupu, et "Get latest from database" (Sync)
-
+  // To get rid of "React Hook useEffect has a missing dependency: 'dispatch'" warning...
+  // I added one extra comment line - 1 line before the Array
   useEffect(() => {
     fetch('http://localhost:8081/api/post').then(response => {
       return response.json();
     }).then(async (data) => {
       await dispatch(updatePosts(data))
     })
+    // eslint-disable-next-line
   }, [])
 
-  const handleSubmit = (e) => {
-    // Commented e.preventDefault(); out - because new post wasn't on the page
-    // I had to refresh the page by hand to finally see the newPost.
-    // https://reactjs.org/docs/lists-and-keys.html#keys
-    // e.preventDefault();
 
-    // I think the ID, createdAt and updatedAt fields are not neccesary to post,
-    // because Mongo DB will do it :)
-    // See newPost oli loengu lõpus handleSubmiti
+  const handleUpdate = (record) => {
+    console.log(record)
+    // TODO: finish this...
+  }
+
+
+  const handleDelete = async (id) => {
+    const response = await fetch('http://localhost:8081/api/post/delete/' + id, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    const returnedData = await response.json()
+
+    if(response.status === 200) {
+      dispatch(removePost(returnedData));
+      notification.success({
+        message: 'Post Deleted!',
+        duration: 2,
+      })
+    } else {
+      // console.log(returnedData)
+      notification.error({
+        message: returnedData,
+        duration: 2,
+      })
+    }
+  };
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // For testing purpose only - when the log In wasn't built yet
+    // if(state.auth.user === null) {
+    //   const newPost = {
+    //     title,
+    //     body,
+    //     authorName: "Guest",
+    //   };
+    //   addNewPost(newPost)
+    // } else {
+    //   const newPost = {
+    //     title,
+    //     body,
+    //     authorName: `${state.auth.user.firstName} ${state.auth.user.lastName}`,
+    //   };
+    //   addNewPost(newPost)
+    // }
+
     const newPost = {
       title,
       body,
-      // Becacuse I don't have signup and login jet, then user.id is null
-      // authorId: state.auth.user.id
-      // So next line is just for testing purposes
-      // authorId: 2
-
-
-      // authorId: `${state.auth.user.firstName} ${state.auth.user.lastName}`,
-      authorId: "Mari Murakas",
+      authorName: `${state.auth.user.firstName} ${state.auth.user.lastName}`,
     };
 
+    addNewPost(newPost)
     setTitle("");
     setBody("");
-
-    addNewPost(newPost)
 
     if (inputRef.current) inputRef.current.focus();
   };
@@ -115,14 +149,30 @@ function Posts() {
     })
 
     const returnedData = await response.json()
-    dispatch(addPost(returnedData));
+    // console.log(response.status)
+
+    if(response.status === 200){
+      dispatch(addPost(returnedData));
+      notification.success({
+        message: 'Post Submited!',
+        duration: 2,
+      })
+    } else {
+      // console.log(returnedData)
+      // TODO: change the BE logic to see error messages. Nothing is sent back at the moment
+      notification.error({
+        message: returnedData,
+        duration: 2,
+      })
+    }
   };
 
+  // It's a great way to console log something. {} makes it an object and therefore shows the object's name
   // console.log({ inputRef });
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <h1>Posts</h1>
+    <>
+      <h1>Add post</h1>
       <form onSubmit={handleSubmit}>
         <input
           ref={inputRef}
@@ -136,32 +186,29 @@ function Posts() {
         <br/><br/>
 
         <input
-          ref={inputRef}
-          placeholder="Add post text"
+          // ref={inputRef}
+          placeholder="Add text"
           type="text"
           value={body}
           onChange={(e) => setBody(e.target.value)}
           required
         />
         <br/><br/>
-        <Button htmlType="submit" type="primary" ghost="true">Submit</Button>
+        <Button 
+          htmlType="submit" 
+          className="submitBtn">Submit
+        </Button>
         <br/><br/><br/>
       </form>
 
-      {/* {state.posts.data.map((e) => (
-        <li key={e.id}>
-          {e.id} {e.title}
-          <span
-            style={{ cursor: "pointer" }}
-            onClick={() => dispatch(removePost(e.id))}
-          >
-            &#128540;
-          </span>
-        </li>
-      ))} */}
-
-    <Table pagination={{ pageSize: 8 }} columns={tableColumns} dataSource={state.posts.data} rowKey='_id' />
-    </div>
+      <Table 
+        pagination={{ pageSize: 5 }} 
+        columns={tableColumns} 
+        dataSource={state.posts.data} 
+        rowKey='_id' 
+        style={{ display: "grid", placeItems: "center" }}
+      />
+    </>
   );
 }
 
