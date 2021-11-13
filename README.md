@@ -3,7 +3,7 @@
   
 # Kodutööd  
 <details>
-  <summary>1. kodutöö (tähtaeg 17.09)</summary>
+  <summary>1. kodutöö</summary>
   
   Uue kategooria lisamine toimib Backendis. Testitud Postman'iga.  
   
@@ -12,7 +12,7 @@
 </details>
   
 <details>
-  <summary>2. kodutöö (tähtaeg 01.10)</summary>
+  <summary>2. kodutöö</summary>
   
   "Kategooriad" nupp asub avalehel (mitte navbar-il). Sealt avaneb kategooriate leht, kus kuvatakse juba sisestatud kategooriaid ja nuppu, mille abil on võimalik minna "Lisa uus kategooria" lehele.  
   
@@ -21,7 +21,7 @@
 </details>
   
 <details>
-  <summary>3. kodutöö (tähtaeg 15.10)</summary>
+  <summary>3. kodutöö</summary>
 
   ### I osa:
   * lisasin eseme info uuendamise võimaluse  
@@ -42,7 +42,7 @@
 </details>
 
 <details>
-  <summary>4. kodutöö (tähtaeg 25.10)</summary>
+  <summary>4. kodutöö</summary>
   
   ### I osa:
   * Lisasin komponentidele ja lehekülgedele natukene style'i.  
@@ -66,6 +66,16 @@
 
   ![Grid layout](Readme_file_pics/Hover_effect.gif)  
 
+</details>
+
+<details>
+  <summary>5. kodutöö</summary>
+  
+  Sign Up, Log In, Log Out operations. Deleting and adding a post + show all the posts in one table.  
+  When I have more free time, I'll try to finish the tasks (I wrote comments about them).  
+  
+  ![5. kodutöö animatsioon](Readme_file_pics/5th_HW.gif)  
+  
 </details>
 
 <br/>
@@ -108,7 +118,7 @@
 
 <br/>
   
-# Pisipildid, logod, animatsioonid jms on võetud järgnevatelt lehtedelt:  
+### Pisipildid, logod, animatsioonid jms on võetud järgnevatelt lehtedelt:  
 * https://www.flaticon.com/  
 * https://maketext.io/  
 * https://loading.io/css  
