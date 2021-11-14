@@ -46,7 +46,6 @@ function Login() {
       dispatch(loginUser(returnedData));
       notification.success({
         message: `Welcome, ${returnedData.firstName}!`,
-        duration: 2,
       })
 
       redirectToPostsPage();

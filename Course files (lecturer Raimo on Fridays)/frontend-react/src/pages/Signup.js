@@ -44,8 +44,7 @@ function Signup() {
 
     if(response.status === 200) {
       notification.success({
-        message: 'User Created. You may Log In :)',
-        duration: 2,
+        message: 'User Created. You may Log In now :)'
       })
 
       form.resetFields()
@@ -118,7 +117,7 @@ function Signup() {
           rules={[
             {
               required: true,
-              message: 'Please enter your password!'
+              message: 'Please enter your password again!'
             }
           ]}
         >

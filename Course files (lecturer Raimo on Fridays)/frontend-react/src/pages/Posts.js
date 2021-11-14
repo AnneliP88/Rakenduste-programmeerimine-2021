@@ -154,7 +154,7 @@ function Posts() {
     if(response.status === 200){
       dispatch(addPost(returnedData));
       notification.success({
-        message: 'Post Submited!',
+        message: 'Post Submitted!',
         duration: 2,
       })
     } else {

@@ -7,7 +7,7 @@ exports.getPosts = async (req, res) => {
 
 // I took only these fields from the req.body, which were necessary
 // There could be more fields there...but I don't need them :)
-// Lecturer Raimo did the same with login and signup queries
+// Lecturer Raimo did the same with log in and sign up queries
 exports.createPost = async (req, res) => {
   const { title, body, authorName } = req.body
 
@@ -19,7 +19,6 @@ exports.createPost = async (req, res) => {
 
   const createdPost = new Post(postTemplate)
   const savedPost = await createdPost.save()
-  console.log(savedPost)
   // Had to change it, because I got "Uncought SyntaxError: Unexpected token y..." error
   res.status(200).send(savedPost)
 }
